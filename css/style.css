@@ -287,10 +287,9 @@ nav li a:hover {
 /******************************* text slider 05 ******************************/
 /*****************************************************************************/
 
-.carousel-inner > . > img,
-.carousel-inner > . > a > img {
-	 rgba(0,0,0,1);
-     width: 100%;
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	 width: 70%;
 	 margin: auto;
 }
 /*****************************************************************************/
@@ -324,6 +323,7 @@ nav li a:hover {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+
 
 .model-7 li {
   margin: 0 10px;
@@ -385,7 +385,7 @@ nav li a:hover {
       width: 70%;
       margin: auto;
 }
-rgba(100,200,240,0.5);rgba(100,200,240,0.5);
+
 .content {
 /*
   padding: 30px;
@@ -404,8 +404,8 @@ position:absolute;
 color: darken(steelblue, 10%);
 background-color: darken(steelblue, 50%);
 }*/
-
-	background: rgba(254, 165, 0, 0.2);
+.site-footer {
+    background: rgba(254, 165, 0, 0.2);
     position: relative;
     height: 50px;
     /*margin-top: -100px;*/
