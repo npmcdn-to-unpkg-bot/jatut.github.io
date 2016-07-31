@@ -1,0 +1,2871 @@
+/*###
+Bootstrap Stuff to make this pen work
+###*/
+/* Attention: this is a copy of some bootstrap vaiables, CSS and mixins -> not needed on production code if bootstrap is used */
+/* Copied Bootstrap Mixins */
+/* Copied Bootstrap CSS */
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #2d56d2;
+/*
+  background: -webkit-repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+  background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+*/
+}
+
+.container {
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-fluid {
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*###
+Aditional Variables
+###*/
+/* -> Those lines have to be added to _variables.scss */
+/* adjust the grid gutter vertically */
+/* this depens on the value choosen for the gutter.
+unfortunatelly this has to be done by hand until the gutters look "right"*/
+/* Breakpoints
+You can set the same as the bootstrap grid ones but you can also have different ones*/
+/* Z-index for links on hexagons*/
+/* ###
+Here comes the actual hexagon grid code
+### */
+/* It turned out that the SVG polygon I am using for the hexagon is not perfectly matching an equal sided hexagon. Its slightly distorted and therefore has a different aspect ratio. Please remove this variable override if you use perfect hexagons.*/
+/* Calculate the hex gutters */
+/*###
+Call the mixins to generate the grid
+###*/
+/* Include for common css*/
+/*== Grid CSS 1: Basic CSS that is independet of number of columns */
+.hex-grid {
+  overflow: hidden;
+  margin: -8.85714px -8.85714px;
+}
+.hex-grid .hex-row {
+  display: table;
+  margin-top: 2px;
+}
+.hex-grid .hex-col {
+  float: left;
+  position: relative;
+  margin-top: -2px;
+}
+.hex-grid .hex {
+  position: absolute;
+  top: 0;
+  /* Offset position within the col-container */
+  left: 16.66667%;
+  right: 16.66667%;
+  height: 0;
+  padding: 0;
+  padding-bottom: 59.04762%;
+}
+.hex-grid .hex-inner {
+  padding: 8.85714px 10px;
+}
+
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid .hex-row {
+    width: 150%;
+    margin-left: -25%;
+  }
+  .hex-grid .hex-col {
+    width: 100%;
+    padding-bottom: 59.04762%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-1 .hex-row {
+    width: 150%;
+    margin-left: -25%;
+  }
+  .hex-grid-xxs-1 .hex-col {
+    width: 100%;
+    padding-bottom: 59.04762%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-2 .hex-row {
+    width: 128.57143%;
+    margin-left: -14.28571%;
+  }
+  .hex-grid-xxs-2 .hex-col {
+    width: 66.66667%;
+    padding-bottom: 39.36508%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-2 .hex-row {
+    padding-bottom: 25.30612%;
+  }
+  .hex-grid-xxs-2 .hex-col {
+    padding-bottom: 19.68254%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-2 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-2 .hex-col:nth-child(2n + 2) {
+    margin-left: 33.33333%;
+  }
+  .hex-grid-xxs-2 .hex-col:nth-child(2n + 1) {
+    margin-right: 33.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-3 .hex-row {
+    width: 120%;
+    margin-left: -10%;
+  }
+  .hex-grid-xxs-3 .hex-col {
+    width: 50%;
+    padding-bottom: 29.52381%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-3 .hex-row {
+    padding-bottom: 17.71429%;
+  }
+  .hex-grid-xxs-3 .hex-col {
+    padding-bottom: 14.7619%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-3 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-3 .hex-col:nth-child(3n + 3) {
+    margin-left: 25%;
+  }
+  .hex-grid-xxs-3 .hex-col:nth-child(3n + 3) {
+    margin-right: 25%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-4 .hex-row {
+    width: 115.38462%;
+    margin-left: -7.69231%;
+  }
+  .hex-grid-xxs-4 .hex-col {
+    width: 40%;
+    padding-bottom: 23.61905%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-4 .hex-row {
+    padding-bottom: 13.62637%;
+  }
+  .hex-grid-xxs-4 .hex-col {
+    padding-bottom: 11.80952%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-4 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-4 .hex-col:nth-child(4n + 3) {
+    margin-left: 20%;
+  }
+  .hex-grid-xxs-4 .hex-col:nth-child(4n + 2) {
+    margin-right: 20%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-5 .hex-row {
+    width: 112.5%;
+    margin-left: -6.25%;
+  }
+  .hex-grid-xxs-5 .hex-col {
+    width: 33.33333%;
+    padding-bottom: 19.68254%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-5 .hex-row {
+    padding-bottom: 11.07143%;
+  }
+  .hex-grid-xxs-5 .hex-col {
+    padding-bottom: 9.84127%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-5 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-5 .hex-col:nth-child(5n + 4) {
+    margin-left: 16.66667%;
+  }
+  .hex-grid-xxs-5 .hex-col:nth-child(5n + 5) {
+    margin-right: 16.66667%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-6 .hex-row {
+    width: 110.52632%;
+    margin-left: -5.26316%;
+  }
+  .hex-grid-xxs-6 .hex-col {
+    width: 28.57143%;
+    padding-bottom: 16.87075%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-6 .hex-row {
+    padding-bottom: 9.32331%;
+  }
+  .hex-grid-xxs-6 .hex-col {
+    padding-bottom: 8.43537%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-6 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-6 .hex-col:nth-child(6n + 4) {
+    margin-left: 14.28571%;
+  }
+  .hex-grid-xxs-6 .hex-col:nth-child(6n + 3) {
+    margin-right: 14.28571%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-7 .hex-row {
+    width: 109.09091%;
+    margin-left: -4.54545%;
+  }
+  .hex-grid-xxs-7 .hex-col {
+    width: 25%;
+    padding-bottom: 14.7619%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-7 .hex-row {
+    padding-bottom: 8.05195%;
+  }
+  .hex-grid-xxs-7 .hex-col {
+    padding-bottom: 7.38095%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-7 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-7 .hex-col:nth-child(7n + 5) {
+    margin-left: 12.5%;
+  }
+  .hex-grid-xxs-7 .hex-col:nth-child(7n + 7) {
+    margin-right: 12.5%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-8 .hex-row {
+    width: 108%;
+    margin-left: -4%;
+  }
+  .hex-grid-xxs-8 .hex-col {
+    width: 22.22222%;
+    padding-bottom: 13.12169%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-8 .hex-row {
+    padding-bottom: 7.08571%;
+  }
+  .hex-grid-xxs-8 .hex-col {
+    padding-bottom: 6.56085%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-8 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-8 .hex-col:nth-child(8n + 5) {
+    margin-left: 11.11111%;
+  }
+  .hex-grid-xxs-8 .hex-col:nth-child(8n + 4) {
+    margin-right: 11.11111%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-9 .hex-row {
+    width: 107.14286%;
+    margin-left: -3.57143%;
+  }
+  .hex-grid-xxs-9 .hex-col {
+    width: 20%;
+    padding-bottom: 11.80952%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-9 .hex-row {
+    padding-bottom: 6.32653%;
+  }
+  .hex-grid-xxs-9 .hex-col {
+    padding-bottom: 5.90476%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-9 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-9 .hex-col:nth-child(9n + 6) {
+    margin-left: 10%;
+  }
+  .hex-grid-xxs-9 .hex-col:nth-child(9n + 9) {
+    margin-right: 10%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-10 .hex-row {
+    width: 106.45161%;
+    margin-left: -3.22581%;
+  }
+  .hex-grid-xxs-10 .hex-col {
+    width: 18.18182%;
+    padding-bottom: 10.73593%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-10 .hex-row {
+    padding-bottom: 5.71429%;
+  }
+  .hex-grid-xxs-10 .hex-col {
+    padding-bottom: 5.36797%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-10 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-10 .hex-col:nth-child(10n + 6) {
+    margin-left: 9.09091%;
+  }
+  .hex-grid-xxs-10 .hex-col:nth-child(10n + 5) {
+    margin-right: 9.09091%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 0) {
+  .hex-grid-xxs-11 .hex-row {
+    width: 105.88235%;
+    margin-left: -2.94118%;
+  }
+  .hex-grid-xxs-11 .hex-col {
+    width: 16.66667%;
+    padding-bottom: 9.84127%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 0) {
+  .hex-grid-xxs-11 .hex-row {
+    padding-bottom: 5.21008%;
+  }
+  .hex-grid-xxs-11 .hex-col {
+    padding-bottom: 4.92063%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xxs-11 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xxs-11 .hex-col:nth-child(11n + 7) {
+    margin-left: 8.33333%;
+  }
+  .hex-grid-xxs-11 .hex-col:nth-child(11n + 11) {
+    margin-right: 8.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-1 .hex-row {
+    width: 150%;
+    margin-left: -25%;
+  }
+  .hex-grid-xs-1 .hex-col {
+    width: 100%;
+    padding-bottom: 59.04762%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-2 .hex-row {
+    width: 128.57143%;
+    margin-left: -14.28571%;
+  }
+  .hex-grid-xs-2 .hex-col {
+    width: 66.66667%;
+    padding-bottom: 39.36508%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-2 .hex-row {
+    padding-bottom: 25.30612%;
+  }
+  .hex-grid-xs-2 .hex-col {
+    padding-bottom: 19.68254%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-2 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-2 .hex-col:nth-child(2n + 2) {
+    margin-left: 33.33333%;
+  }
+  .hex-grid-xs-2 .hex-col:nth-child(2n + 1) {
+    margin-right: 33.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-3 .hex-row {
+    width: 120%;
+    margin-left: -10%;
+  }
+  .hex-grid-xs-3 .hex-col {
+    width: 50%;
+    padding-bottom: 29.52381%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-3 .hex-row {
+    padding-bottom: 17.71429%;
+  }
+  .hex-grid-xs-3 .hex-col {
+    padding-bottom: 14.7619%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-3 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-3 .hex-col:nth-child(3n + 3) {
+    margin-left: 25%;
+  }
+  .hex-grid-xs-3 .hex-col:nth-child(3n + 3) {
+    margin-right: 25%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-4 .hex-row {
+    width: 115.38462%;
+    margin-left: -7.69231%;
+  }
+  .hex-grid-xs-4 .hex-col {
+    width: 40%;
+    padding-bottom: 23.61905%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-4 .hex-row {
+    padding-bottom: 13.62637%;
+  }
+  .hex-grid-xs-4 .hex-col {
+    padding-bottom: 11.80952%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-4 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-4 .hex-col:nth-child(4n + 3) {
+    margin-left: 20%;
+  }
+  .hex-grid-xs-4 .hex-col:nth-child(4n + 2) {
+    margin-right: 20%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-5 .hex-row {
+    width: 112.5%;
+    margin-left: -6.25%;
+  }
+  .hex-grid-xs-5 .hex-col {
+    width: 33.33333%;
+    padding-bottom: 19.68254%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-5 .hex-row {
+    padding-bottom: 11.07143%;
+  }
+  .hex-grid-xs-5 .hex-col {
+    padding-bottom: 9.84127%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-5 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-5 .hex-col:nth-child(5n + 4) {
+    margin-left: 16.66667%;
+  }
+  .hex-grid-xs-5 .hex-col:nth-child(5n + 5) {
+    margin-right: 16.66667%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-6 .hex-row {
+    width: 110.52632%;
+    margin-left: -5.26316%;
+  }
+  .hex-grid-xs-6 .hex-col {
+    width: 28.57143%;
+    padding-bottom: 16.87075%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-6 .hex-row {
+    padding-bottom: 9.32331%;
+  }
+  .hex-grid-xs-6 .hex-col {
+    padding-bottom: 8.43537%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-6 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-6 .hex-col:nth-child(6n + 4) {
+    margin-left: 14.28571%;
+  }
+  .hex-grid-xs-6 .hex-col:nth-child(6n + 3) {
+    margin-right: 14.28571%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-7 .hex-row {
+    width: 109.09091%;
+    margin-left: -4.54545%;
+  }
+  .hex-grid-xs-7 .hex-col {
+    width: 25%;
+    padding-bottom: 14.7619%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-7 .hex-row {
+    padding-bottom: 8.05195%;
+  }
+  .hex-grid-xs-7 .hex-col {
+    padding-bottom: 7.38095%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-7 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-7 .hex-col:nth-child(7n + 5) {
+    margin-left: 12.5%;
+  }
+  .hex-grid-xs-7 .hex-col:nth-child(7n + 7) {
+    margin-right: 12.5%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-8 .hex-row {
+    width: 108%;
+    margin-left: -4%;
+  }
+  .hex-grid-xs-8 .hex-col {
+    width: 22.22222%;
+    padding-bottom: 13.12169%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-8 .hex-row {
+    padding-bottom: 7.08571%;
+  }
+  .hex-grid-xs-8 .hex-col {
+    padding-bottom: 6.56085%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-8 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-8 .hex-col:nth-child(8n + 5) {
+    margin-left: 11.11111%;
+  }
+  .hex-grid-xs-8 .hex-col:nth-child(8n + 4) {
+    margin-right: 11.11111%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-9 .hex-row {
+    width: 107.14286%;
+    margin-left: -3.57143%;
+  }
+  .hex-grid-xs-9 .hex-col {
+    width: 20%;
+    padding-bottom: 11.80952%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-9 .hex-row {
+    padding-bottom: 6.32653%;
+  }
+  .hex-grid-xs-9 .hex-col {
+    padding-bottom: 5.90476%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-9 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-9 .hex-col:nth-child(9n + 6) {
+    margin-left: 10%;
+  }
+  .hex-grid-xs-9 .hex-col:nth-child(9n + 9) {
+    margin-right: 10%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-10 .hex-row {
+    width: 106.45161%;
+    margin-left: -3.22581%;
+  }
+  .hex-grid-xs-10 .hex-col {
+    width: 18.18182%;
+    padding-bottom: 10.73593%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-10 .hex-row {
+    padding-bottom: 5.71429%;
+  }
+  .hex-grid-xs-10 .hex-col {
+    padding-bottom: 5.36797%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-10 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-10 .hex-col:nth-child(10n + 6) {
+    margin-left: 9.09091%;
+  }
+  .hex-grid-xs-10 .hex-col:nth-child(10n + 5) {
+    margin-right: 9.09091%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 350px) {
+  .hex-grid-xs-11 .hex-row {
+    width: 105.88235%;
+    margin-left: -2.94118%;
+  }
+  .hex-grid-xs-11 .hex-col {
+    width: 16.66667%;
+    padding-bottom: 9.84127%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 350px) {
+  .hex-grid-xs-11 .hex-row {
+    padding-bottom: 5.21008%;
+  }
+  .hex-grid-xs-11 .hex-col {
+    padding-bottom: 4.92063%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xs-11 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xs-11 .hex-col:nth-child(11n + 7) {
+    margin-left: 8.33333%;
+  }
+  .hex-grid-xs-11 .hex-col:nth-child(11n + 11) {
+    margin-right: 8.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-1 .hex-row {
+    width: 150%;
+    margin-left: -25%;
+  }
+  .hex-grid-sm-1 .hex-col {
+    width: 100%;
+    padding-bottom: 59.04762%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-2 .hex-row {
+    width: 128.57143%;
+    margin-left: -14.28571%;
+  }
+  .hex-grid-sm-2 .hex-col {
+    width: 66.66667%;
+    padding-bottom: 39.36508%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-2 .hex-row {
+    padding-bottom: 25.30612%;
+  }
+  .hex-grid-sm-2 .hex-col {
+    padding-bottom: 19.68254%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-2 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-2 .hex-col:nth-child(2n + 2) {
+    margin-left: 33.33333%;
+  }
+  .hex-grid-sm-2 .hex-col:nth-child(2n + 1) {
+    margin-right: 33.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-3 .hex-row {
+    width: 120%;
+    margin-left: -10%;
+  }
+  .hex-grid-sm-3 .hex-col {
+    width: 50%;
+    padding-bottom: 29.52381%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-3 .hex-row {
+    padding-bottom: 17.71429%;
+  }
+  .hex-grid-sm-3 .hex-col {
+    padding-bottom: 14.7619%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-3 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-3 .hex-col:nth-child(3n + 3) {
+    margin-left: 25%;
+  }
+  .hex-grid-sm-3 .hex-col:nth-child(3n + 3) {
+    margin-right: 25%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-4 .hex-row {
+    width: 115.38462%;
+    margin-left: -7.69231%;
+  }
+  .hex-grid-sm-4 .hex-col {
+    width: 40%;
+    padding-bottom: 23.61905%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-4 .hex-row {
+    padding-bottom: 13.62637%;
+  }
+  .hex-grid-sm-4 .hex-col {
+    padding-bottom: 11.80952%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-4 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-4 .hex-col:nth-child(4n + 3) {
+    margin-left: 20%;
+  }
+  .hex-grid-sm-4 .hex-col:nth-child(4n + 2) {
+    margin-right: 20%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-5 .hex-row {
+    width: 112.5%;
+    margin-left: -6.25%;
+  }
+  .hex-grid-sm-5 .hex-col {
+    width: 33.33333%;
+    padding-bottom: 19.68254%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-5 .hex-row {
+    padding-bottom: 11.07143%;
+  }
+  .hex-grid-sm-5 .hex-col {
+    padding-bottom: 9.84127%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-5 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-5 .hex-col:nth-child(5n + 4) {
+    margin-left: 16.66667%;
+  }
+  .hex-grid-sm-5 .hex-col:nth-child(5n + 5) {
+    margin-right: 16.66667%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-6 .hex-row {
+    width: 110.52632%;
+    margin-left: -5.26316%;
+  }
+  .hex-grid-sm-6 .hex-col {
+    width: 28.57143%;
+    padding-bottom: 16.87075%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-6 .hex-row {
+    padding-bottom: 9.32331%;
+  }
+  .hex-grid-sm-6 .hex-col {
+    padding-bottom: 8.43537%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-6 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-6 .hex-col:nth-child(6n + 4) {
+    margin-left: 14.28571%;
+  }
+  .hex-grid-sm-6 .hex-col:nth-child(6n + 3) {
+    margin-right: 14.28571%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-7 .hex-row {
+    width: 109.09091%;
+    margin-left: -4.54545%;
+  }
+  .hex-grid-sm-7 .hex-col {
+    width: 25%;
+    padding-bottom: 14.7619%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-7 .hex-row {
+    padding-bottom: 8.05195%;
+  }
+  .hex-grid-sm-7 .hex-col {
+    padding-bottom: 7.38095%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-7 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-7 .hex-col:nth-child(7n + 5) {
+    margin-left: 12.5%;
+  }
+  .hex-grid-sm-7 .hex-col:nth-child(7n + 7) {
+    margin-right: 12.5%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-8 .hex-row {
+    width: 108%;
+    margin-left: -4%;
+  }
+  .hex-grid-sm-8 .hex-col {
+    width: 22.22222%;
+    padding-bottom: 13.12169%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-8 .hex-row {
+    padding-bottom: 7.08571%;
+  }
+  .hex-grid-sm-8 .hex-col {
+    padding-bottom: 6.56085%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-8 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-8 .hex-col:nth-child(8n + 5) {
+    margin-left: 11.11111%;
+  }
+  .hex-grid-sm-8 .hex-col:nth-child(8n + 4) {
+    margin-right: 11.11111%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-9 .hex-row {
+    width: 107.14286%;
+    margin-left: -3.57143%;
+  }
+  .hex-grid-sm-9 .hex-col {
+    width: 20%;
+    padding-bottom: 11.80952%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-9 .hex-row {
+    padding-bottom: 6.32653%;
+  }
+  .hex-grid-sm-9 .hex-col {
+    padding-bottom: 5.90476%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-9 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-9 .hex-col:nth-child(9n + 6) {
+    margin-left: 10%;
+  }
+  .hex-grid-sm-9 .hex-col:nth-child(9n + 9) {
+    margin-right: 10%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-10 .hex-row {
+    width: 106.45161%;
+    margin-left: -3.22581%;
+  }
+  .hex-grid-sm-10 .hex-col {
+    width: 18.18182%;
+    padding-bottom: 10.73593%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-10 .hex-row {
+    padding-bottom: 5.71429%;
+  }
+  .hex-grid-sm-10 .hex-col {
+    padding-bottom: 5.36797%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-10 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-10 .hex-col:nth-child(10n + 6) {
+    margin-left: 9.09091%;
+  }
+  .hex-grid-sm-10 .hex-col:nth-child(10n + 5) {
+    margin-right: 9.09091%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 544px) {
+  .hex-grid-sm-11 .hex-row {
+    width: 105.88235%;
+    margin-left: -2.94118%;
+  }
+  .hex-grid-sm-11 .hex-col {
+    width: 16.66667%;
+    padding-bottom: 9.84127%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 544px) {
+  .hex-grid-sm-11 .hex-row {
+    padding-bottom: 5.21008%;
+  }
+  .hex-grid-sm-11 .hex-col {
+    padding-bottom: 4.92063%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-sm-11 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-sm-11 .hex-col:nth-child(11n + 7) {
+    margin-left: 8.33333%;
+  }
+  .hex-grid-sm-11 .hex-col:nth-child(11n + 11) {
+    margin-right: 8.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-1 .hex-row {
+    width: 150%;
+    margin-left: -25%;
+  }
+  .hex-grid-md-1 .hex-col {
+    width: 100%;
+    padding-bottom: 59.04762%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-2 .hex-row {
+    width: 128.57143%;
+    margin-left: -14.28571%;
+  }
+  .hex-grid-md-2 .hex-col {
+    width: 66.66667%;
+    padding-bottom: 39.36508%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-2 .hex-row {
+    padding-bottom: 25.30612%;
+  }
+  .hex-grid-md-2 .hex-col {
+    padding-bottom: 19.68254%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-2 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-2 .hex-col:nth-child(2n + 2) {
+    margin-left: 33.33333%;
+  }
+  .hex-grid-md-2 .hex-col:nth-child(2n + 1) {
+    margin-right: 33.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-3 .hex-row {
+    width: 120%;
+    margin-left: -10%;
+  }
+  .hex-grid-md-3 .hex-col {
+    width: 50%;
+    padding-bottom: 29.52381%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-3 .hex-row {
+    padding-bottom: 17.71429%;
+  }
+  .hex-grid-md-3 .hex-col {
+    padding-bottom: 14.7619%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-3 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-3 .hex-col:nth-child(3n + 3) {
+    margin-left: 25%;
+  }
+  .hex-grid-md-3 .hex-col:nth-child(3n + 3) {
+    margin-right: 25%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-4 .hex-row {
+    width: 115.38462%;
+    margin-left: -7.69231%;
+  }
+  .hex-grid-md-4 .hex-col {
+    width: 40%;
+    padding-bottom: 23.61905%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-4 .hex-row {
+    padding-bottom: 13.62637%;
+  }
+  .hex-grid-md-4 .hex-col {
+    padding-bottom: 11.80952%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-4 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-4 .hex-col:nth-child(4n + 3) {
+    margin-left: 20%;
+  }
+  .hex-grid-md-4 .hex-col:nth-child(4n + 2) {
+    margin-right: 20%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-5 .hex-row {
+    width: 112.5%;
+    margin-left: -6.25%;
+  }
+  .hex-grid-md-5 .hex-col {
+    width: 33.33333%;
+    padding-bottom: 19.68254%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-5 .hex-row {
+    padding-bottom: 11.07143%;
+  }
+  .hex-grid-md-5 .hex-col {
+    padding-bottom: 9.84127%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-5 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-5 .hex-col:nth-child(5n + 4) {
+    margin-left: 16.66667%;
+  }
+  .hex-grid-md-5 .hex-col:nth-child(5n + 5) {
+    margin-right: 16.66667%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-6 .hex-row {
+    width: 110.52632%;
+    margin-left: -5.26316%;
+  }
+  .hex-grid-md-6 .hex-col {
+    width: 28.57143%;
+    padding-bottom: 16.87075%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-6 .hex-row {
+    padding-bottom: 9.32331%;
+  }
+  .hex-grid-md-6 .hex-col {
+    padding-bottom: 8.43537%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-6 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-6 .hex-col:nth-child(6n + 4) {
+    margin-left: 14.28571%;
+  }
+  .hex-grid-md-6 .hex-col:nth-child(6n + 3) {
+    margin-right: 14.28571%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-7 .hex-row {
+    width: 109.09091%;
+    margin-left: -4.54545%;
+  }
+  .hex-grid-md-7 .hex-col {
+    width: 25%;
+    padding-bottom: 14.7619%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-7 .hex-row {
+    padding-bottom: 8.05195%;
+  }
+  .hex-grid-md-7 .hex-col {
+    padding-bottom: 7.38095%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-7 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-7 .hex-col:nth-child(7n + 5) {
+    margin-left: 12.5%;
+  }
+  .hex-grid-md-7 .hex-col:nth-child(7n + 7) {
+    margin-right: 12.5%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-8 .hex-row {
+    width: 108%;
+    margin-left: -4%;
+  }
+  .hex-grid-md-8 .hex-col {
+    width: 22.22222%;
+    padding-bottom: 13.12169%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-8 .hex-row {
+    padding-bottom: 7.08571%;
+  }
+  .hex-grid-md-8 .hex-col {
+    padding-bottom: 6.56085%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-8 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-8 .hex-col:nth-child(8n + 5) {
+    margin-left: 11.11111%;
+  }
+  .hex-grid-md-8 .hex-col:nth-child(8n + 4) {
+    margin-right: 11.11111%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-9 .hex-row {
+    width: 107.14286%;
+    margin-left: -3.57143%;
+  }
+  .hex-grid-md-9 .hex-col {
+    width: 20%;
+    padding-bottom: 11.80952%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-9 .hex-row {
+    padding-bottom: 6.32653%;
+  }
+  .hex-grid-md-9 .hex-col {
+    padding-bottom: 5.90476%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-9 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-9 .hex-col:nth-child(9n + 6) {
+    margin-left: 10%;
+  }
+  .hex-grid-md-9 .hex-col:nth-child(9n + 9) {
+    margin-right: 10%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-10 .hex-row {
+    width: 106.45161%;
+    margin-left: -3.22581%;
+  }
+  .hex-grid-md-10 .hex-col {
+    width: 18.18182%;
+    padding-bottom: 10.73593%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-10 .hex-row {
+    padding-bottom: 5.71429%;
+  }
+  .hex-grid-md-10 .hex-col {
+    padding-bottom: 5.36797%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-10 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-10 .hex-col:nth-child(10n + 6) {
+    margin-left: 9.09091%;
+  }
+  .hex-grid-md-10 .hex-col:nth-child(10n + 5) {
+    margin-right: 9.09091%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 768px) {
+  .hex-grid-md-11 .hex-row {
+    width: 105.88235%;
+    margin-left: -2.94118%;
+  }
+  .hex-grid-md-11 .hex-col {
+    width: 16.66667%;
+    padding-bottom: 9.84127%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 768px) {
+  .hex-grid-md-11 .hex-row {
+    padding-bottom: 5.21008%;
+  }
+  .hex-grid-md-11 .hex-col {
+    padding-bottom: 4.92063%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-md-11 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-md-11 .hex-col:nth-child(11n + 7) {
+    margin-left: 8.33333%;
+  }
+  .hex-grid-md-11 .hex-col:nth-child(11n + 11) {
+    margin-right: 8.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-1 .hex-row {
+    width: 150%;
+    margin-left: -25%;
+  }
+  .hex-grid-lg-1 .hex-col {
+    width: 100%;
+    padding-bottom: 59.04762%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-2 .hex-row {
+    width: 128.57143%;
+    margin-left: -14.28571%;
+  }
+  .hex-grid-lg-2 .hex-col {
+    width: 66.66667%;
+    padding-bottom: 39.36508%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-2 .hex-row {
+    padding-bottom: 25.30612%;
+  }
+  .hex-grid-lg-2 .hex-col {
+    padding-bottom: 19.68254%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-2 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-2 .hex-col:nth-child(2n + 2) {
+    margin-left: 33.33333%;
+  }
+  .hex-grid-lg-2 .hex-col:nth-child(2n + 1) {
+    margin-right: 33.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-3 .hex-row {
+    width: 120%;
+    margin-left: -10%;
+  }
+  .hex-grid-lg-3 .hex-col {
+    width: 50%;
+    padding-bottom: 29.52381%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-3 .hex-row {
+    padding-bottom: 17.71429%;
+  }
+  .hex-grid-lg-3 .hex-col {
+    padding-bottom: 14.7619%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-3 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-3 .hex-col:nth-child(3n + 3) {
+    margin-left: 25%;
+  }
+  .hex-grid-lg-3 .hex-col:nth-child(3n + 3) {
+    margin-right: 25%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-4 .hex-row {
+    width: 115.38462%;
+    margin-left: -7.69231%;
+  }
+  .hex-grid-lg-4 .hex-col {
+    width: 40%;
+    padding-bottom: 23.61905%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-4 .hex-row {
+    padding-bottom: 13.62637%;
+  }
+  .hex-grid-lg-4 .hex-col {
+    padding-bottom: 11.80952%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-4 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-4 .hex-col:nth-child(4n + 3) {
+    margin-left: 20%;
+  }
+  .hex-grid-lg-4 .hex-col:nth-child(4n + 2) {
+    margin-right: 20%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-5 .hex-row {
+    width: 112.5%;
+    margin-left: -6.25%;
+  }
+  .hex-grid-lg-5 .hex-col {
+    width: 33.33333%;
+    padding-bottom: 19.68254%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-5 .hex-row {
+    padding-bottom: 11.07143%;
+  }
+  .hex-grid-lg-5 .hex-col {
+    padding-bottom: 9.84127%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-5 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-5 .hex-col:nth-child(5n + 4) {
+    margin-left: 16.66667%;
+  }
+  .hex-grid-lg-5 .hex-col:nth-child(5n + 5) {
+    margin-right: 16.66667%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-6 .hex-row {
+    width: 110.52632%;
+    margin-left: -5.26316%;
+  }
+  .hex-grid-lg-6 .hex-col {
+    width: 28.57143%;
+    padding-bottom: 16.87075%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-6 .hex-row {
+    padding-bottom: 9.32331%;
+  }
+  .hex-grid-lg-6 .hex-col {
+    padding-bottom: 8.43537%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-6 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-6 .hex-col:nth-child(6n + 4) {
+    margin-left: 14.28571%;
+  }
+  .hex-grid-lg-6 .hex-col:nth-child(6n + 3) {
+    margin-right: 14.28571%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-7 .hex-row {
+    width: 109.09091%;
+    margin-left: -4.54545%;
+  }
+  .hex-grid-lg-7 .hex-col {
+    width: 25%;
+    padding-bottom: 14.7619%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-7 .hex-row {
+    padding-bottom: 8.05195%;
+  }
+  .hex-grid-lg-7 .hex-col {
+    padding-bottom: 7.38095%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-7 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-7 .hex-col:nth-child(7n + 5) {
+    margin-left: 12.5%;
+  }
+  .hex-grid-lg-7 .hex-col:nth-child(7n + 7) {
+    margin-right: 12.5%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-8 .hex-row {
+    width: 108%;
+    margin-left: -4%;
+  }
+  .hex-grid-lg-8 .hex-col {
+    width: 22.22222%;
+    padding-bottom: 13.12169%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-8 .hex-row {
+    padding-bottom: 7.08571%;
+  }
+  .hex-grid-lg-8 .hex-col {
+    padding-bottom: 6.56085%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-8 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-8 .hex-col:nth-child(8n + 5) {
+    margin-left: 11.11111%;
+  }
+  .hex-grid-lg-8 .hex-col:nth-child(8n + 4) {
+    margin-right: 11.11111%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-9 .hex-row {
+    width: 107.14286%;
+    margin-left: -3.57143%;
+  }
+  .hex-grid-lg-9 .hex-col {
+    width: 20%;
+    padding-bottom: 11.80952%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-9 .hex-row {
+    padding-bottom: 6.32653%;
+  }
+  .hex-grid-lg-9 .hex-col {
+    padding-bottom: 5.90476%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-9 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-9 .hex-col:nth-child(9n + 6) {
+    margin-left: 10%;
+  }
+  .hex-grid-lg-9 .hex-col:nth-child(9n + 9) {
+    margin-right: 10%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-10 .hex-row {
+    width: 106.45161%;
+    margin-left: -3.22581%;
+  }
+  .hex-grid-lg-10 .hex-col {
+    width: 18.18182%;
+    padding-bottom: 10.73593%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-10 .hex-row {
+    padding-bottom: 5.71429%;
+  }
+  .hex-grid-lg-10 .hex-col {
+    padding-bottom: 5.36797%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-10 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-10 .hex-col:nth-child(10n + 6) {
+    margin-left: 9.09091%;
+  }
+  .hex-grid-lg-10 .hex-col:nth-child(10n + 5) {
+    margin-right: 9.09091%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 992px) {
+  .hex-grid-lg-11 .hex-row {
+    width: 105.88235%;
+    margin-left: -2.94118%;
+  }
+  .hex-grid-lg-11 .hex-col {
+    width: 16.66667%;
+    padding-bottom: 9.84127%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 992px) {
+  .hex-grid-lg-11 .hex-row {
+    padding-bottom: 5.21008%;
+  }
+  .hex-grid-lg-11 .hex-col {
+    padding-bottom: 4.92063%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-lg-11 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-lg-11 .hex-col:nth-child(11n + 7) {
+    margin-left: 8.33333%;
+  }
+  .hex-grid-lg-11 .hex-col:nth-child(11n + 11) {
+    margin-right: 8.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-1 .hex-row {
+    width: 150%;
+    margin-left: -25%;
+  }
+  .hex-grid-xl-1 .hex-col {
+    width: 100%;
+    padding-bottom: 59.04762%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-2 .hex-row {
+    width: 128.57143%;
+    margin-left: -14.28571%;
+  }
+  .hex-grid-xl-2 .hex-col {
+    width: 66.66667%;
+    padding-bottom: 39.36508%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-2 .hex-row {
+    padding-bottom: 25.30612%;
+  }
+  .hex-grid-xl-2 .hex-col {
+    padding-bottom: 19.68254%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-2 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-2 .hex-col:nth-child(2n + 2) {
+    margin-left: 33.33333%;
+  }
+  .hex-grid-xl-2 .hex-col:nth-child(2n + 1) {
+    margin-right: 33.33333%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-3 .hex-row {
+    width: 120%;
+    margin-left: -10%;
+  }
+  .hex-grid-xl-3 .hex-col {
+    width: 50%;
+    padding-bottom: 29.52381%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-3 .hex-row {
+    padding-bottom: 17.71429%;
+  }
+  .hex-grid-xl-3 .hex-col {
+    padding-bottom: 14.7619%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-3 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-3 .hex-col:nth-child(3n + 3) {
+    margin-left: 25%;
+  }
+  .hex-grid-xl-3 .hex-col:nth-child(3n + 3) {
+    margin-right: 25%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-4 .hex-row {
+    width: 115.38462%;
+    margin-left: -7.69231%;
+  }
+  .hex-grid-xl-4 .hex-col {
+    width: 40%;
+    padding-bottom: 23.61905%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-4 .hex-row {
+    padding-bottom: 13.62637%;
+  }
+  .hex-grid-xl-4 .hex-col {
+    padding-bottom: 11.80952%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-4 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-4 .hex-col:nth-child(4n + 3) {
+    margin-left: 20%;
+  }
+  .hex-grid-xl-4 .hex-col:nth-child(4n + 2) {
+    margin-right: 20%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-5 .hex-row {
+    width: 112.5%;
+    margin-left: -6.25%;
+  }
+  .hex-grid-xl-5 .hex-col {
+    width: 33.33333%;
+    padding-bottom: 19.68254%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-5 .hex-row {
+    padding-bottom: 11.07143%;
+  }
+  .hex-grid-xl-5 .hex-col {
+    padding-bottom: 9.84127%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-5 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-5 .hex-col:nth-child(5n + 4) {
+    margin-left: 16.66667%;
+  }
+  .hex-grid-xl-5 .hex-col:nth-child(5n + 5) {
+    margin-right: 16.66667%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-6 .hex-row {
+    width: 110.52632%;
+    margin-left: -5.26316%;
+  }
+  .hex-grid-xl-6 .hex-col {
+    width: 28.57143%;
+    padding-bottom: 16.87075%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-6 .hex-row {
+    padding-bottom: 9.32331%;
+  }
+  .hex-grid-xl-6 .hex-col {
+    padding-bottom: 8.43537%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-6 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-6 .hex-col:nth-child(6n + 4) {
+    margin-left: 14.28571%;
+  }
+  .hex-grid-xl-6 .hex-col:nth-child(6n + 3) {
+    margin-right: 14.28571%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-7 .hex-row {
+    width: 109.09091%;
+    margin-left: -4.54545%;
+  }
+  .hex-grid-xl-7 .hex-col {
+    width: 25%;
+    padding-bottom: 14.7619%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-7 .hex-row {
+    padding-bottom: 8.05195%;
+  }
+  .hex-grid-xl-7 .hex-col {
+    padding-bottom: 7.38095%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-7 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-7 .hex-col:nth-child(7n + 5) {
+    margin-left: 12.5%;
+  }
+  .hex-grid-xl-7 .hex-col:nth-child(7n + 7) {
+    margin-right: 12.5%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-8 .hex-row {
+    width: 108%;
+    margin-left: -4%;
+  }
+  .hex-grid-xl-8 .hex-col {
+    width: 22.22222%;
+    padding-bottom: 13.12169%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-8 .hex-row {
+    padding-bottom: 7.08571%;
+  }
+  .hex-grid-xl-8 .hex-col {
+    padding-bottom: 6.56085%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-8 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-8 .hex-col:nth-child(8n + 5) {
+    margin-left: 11.11111%;
+  }
+  .hex-grid-xl-8 .hex-col:nth-child(8n + 4) {
+    margin-right: 11.11111%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-9 .hex-row {
+    width: 107.14286%;
+    margin-left: -3.57143%;
+  }
+  .hex-grid-xl-9 .hex-col {
+    width: 20%;
+    padding-bottom: 11.80952%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-9 .hex-row {
+    padding-bottom: 6.32653%;
+  }
+  .hex-grid-xl-9 .hex-col {
+    padding-bottom: 5.90476%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-9 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-9 .hex-col:nth-child(9n + 6) {
+    margin-left: 10%;
+  }
+  .hex-grid-xl-9 .hex-col:nth-child(9n + 9) {
+    margin-right: 10%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-10 .hex-row {
+    width: 106.45161%;
+    margin-left: -3.22581%;
+  }
+  .hex-grid-xl-10 .hex-col {
+    width: 18.18182%;
+    padding-bottom: 10.73593%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-10 .hex-row {
+    padding-bottom: 5.71429%;
+  }
+  .hex-grid-xl-10 .hex-col {
+    padding-bottom: 5.36797%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-10 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-10 .hex-col:nth-child(10n + 6) {
+    margin-left: 9.09091%;
+  }
+  .hex-grid-xl-10 .hex-col:nth-child(10n + 5) {
+    margin-right: 9.09091%;
+  }
+}
+/* This allows us to initialize the mobile first case without col-* suffix  */
+/*= Math that changes depending on the amount of cols */
+/* calculation of the amount of hexagons on first and second row */
+/* using modulo to find out if total amount is odd or even */
+/* Calculate the position of the extra offset margins*/
+/* Amount of grid dividers in one row. Each .hex-col is divided into 6 subcolumns */
+/* calculation of the divider width
+The divider with is used to find out the width of the .hex-row wrapper relative to the Bootstrap .container.
+All dividers summed together are always > 100% because two dividers are in the invisible space on the left and right. e.g 120% in case of 12 dividers*/
+/* .hex-col width within the .hex-row.
+All col width within a row sum up to 100% because we change the reference system here. */
+/*== Grid CSS 2: Mobile first and col 1 case*/
+@media (min-width: 1200px) {
+  .hex-grid-xl-11 .hex-row {
+    width: 105.88235%;
+    margin-left: -2.94118%;
+  }
+  .hex-grid-xl-11 .hex-col {
+    width: 16.66667%;
+    padding-bottom: 9.84127%;
+  }
+}
+/*== Grid CSS 3: More than one colum case */
+@media (min-width: 1200px) {
+  .hex-grid-xl-11 .hex-row {
+    padding-bottom: 5.21008%;
+  }
+  .hex-grid-xl-11 .hex-col {
+    padding-bottom: 4.92063%;
+    /* Extra offset margins (no margin if just one grid col)*/
+    /* The first rule is durty, but i need an stronger selector on each breakpoint */
+  }
+  .hex-grid-xl-11 .hex-col:nth-child(1n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hex-grid-xl-11 .hex-col:nth-child(11n + 7) {
+    margin-left: 8.33333%;
+  }
+  .hex-grid-xl-11 .hex-col:nth-child(11n + 11) {
+    margin-right: 8.33333%;
+  }
+}
+/* Iterate over include to get cols*/
+/*@for $i from 0 to $hex-grid-gutter-cols {
+  @include generate-hex-grid-cols($hex-grid-breakpoint,$i);
+}*/
+/*###
+Debug colors
+### */
+/*###
+Formatting the hexagons -> idependent of grid
+### */
+.hex .hex-content {
+/*
+  color: white;
+*/
+  color:  #000;
+  position: absolute;
+  /* centring trick*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.hex .hex-boxlink {
+  position: absolute;
+  display: block;
+  top: 8.85714px;
+  bottom: 8.85714px;
+  left: 10px;
+  right: 10px;
+  border-radius: 100%;
+  z-index: 10;
+}
+.hex .hex-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.hex .hex-bg {
+  fill: #2dd280;
+}
+
+.hex:hover .hex-bg {
+  fill: #B6FF00;
+}
+
+.svg-image {
+   width: 100%;
+   height: 40%;
+   transform: "translate(0, 0)";
+}

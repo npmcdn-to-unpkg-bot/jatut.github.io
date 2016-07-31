@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+      <title>Hexagon grid Step  12b (Intrinsic ratio)</title>
+      <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css'>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+      <link rel="stylesheet" href="css/style.css">
+      <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/videoslider.css">
+      <script src="js/prefixfree.min.js"></script>
+
+     <link rel="stylesheet" href="css/neon.css">
+<!--
+-->
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="js/wow.js"></script>
+    <script>new WOW().init();</script>
+
+
+
+        <script src="js/prefixfree.min.js"></script>
+
+
+  </head>
+
+<body>
+
+<canvas></canvas>
+<script src="js/neon.js"></script>
+
+<!--=== <Start> Блок заголовка -->
+
+<!--
+<div class="container">
+  <div class="page-header" id="banner">
+    <div class="row">
+      <div class="jumbotron">
+
+        <h1>Bootstrap theme</h1>
+        <p class="lead">Bootstrap 3.2.0 theme based on three different themes from Bootswatch</p>
+          <ul>
+          <li><a href="http://bootswatch.com/flatly/">Flatly colors</a>
+          </li>
+          <li><a href="http://bootswatch.com/cerulean/">Cerulean sizes</a>
+          </li>
+          <li><a href="http://bootswatch.com/slate/">Slate Navbar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+-->
+
+
+<!--=== <End> Блок заголовка -->
+<!--=== <Start> Блок слайдера -->
+    <!-- reference examples at http://www.idangero.us/swiper/demos/#.Vl8kD9-rRHc -->
+<section id="lab_video_slider">
+  <div class="container-fluid">
+    <div class="row">
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+      <!-- Link Swiper's CSS -->
+      <link rel="stylesheet" href="css/swiper.min.css">
+
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div id="slide_one" class="swiper-slide">
+            <!-- VIDEO -->
+<!--
+              <video class="slider-video" width="100%" preload="auto" loop="" autoplay="" style="visibility: visible; width: 100%;" poster="//dl.dropbox.com/s/pjopy0mu4klisat/working-with-espresso.jpg">
+              <source src="//dl.dropbox.com/s/931244iox7i0fpk/working-with-espresso.mp4" type="video/mp4">
+                <source src="//dl.dropbox.com/s/g3mo3w34pb8pp2l/working-with-espresso.webm" type="video/webm">
+                  <source src="//dl.dropbox.com/s/p37f0avio0x6bs8/working-with-espresso.ogv" type="video/ogg">
+-->
+              <video class="slider-video" width="100%" preload="auto" loop="" autoplay="" style="visibility: visible; width: 100%;" poster="Test/working-with-espresso.jpgw">
+              <source src="Test/working-with-espresso.mp4" type="video/mp4">
+                <source src="Test/working-with-espresso.webm" type="video/webm">
+                  <source src="Test/working-with-espresso.ogv" type="video/ogg">
+            </video>
+            <!-- END VIDEO -->
+          </div>
+
+          <div id="slide_two" class="swiper-slide">
+  <div id="lab_video_text_overlay">
+    <div class="container">
+        <div class="container-fluid">
+
+  <div class="hex-grid hex-grid-xs-2 hex-grid-sm-5 hex-grid-md-7">
+    <div class="hex-row">
+
+     <div class="hex-col offset 2">
+         <div class="hex  offset2">
+             <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet"  offset1>
+            <defs>
+              <mask id="maskHex">
+                <!-- hexagon -->
+                <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+              </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg"  offset1/>
+            <image mask="url(#maskHex)" class='svg-image animated flash' width="100%" height="40%"  xlink:href="image/belarus_fluttering_flag_128.png" transform="translate(0, 0)" />
+          </svg>
+          <div class="hex-content">
+            <h5 class="wow bounceInRight"> БЕЛАРУСЬ</h5>
+          </div>
+          <a class="hex-boxlink" href="http://www.assistent-system.by/"></a>
+        </div>
+      </div>
+
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <!-- hexagon -->
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+            <image mask="url(#maskHex)" class='svg-image animated flash' width="100%" height="100%"xlink:href="image/european_union_fluttering_flag_256.png" />
+          </svg>
+          <div class="hex-content" padding-left = 10%>
+            <h5 class="animated fadeInUpBig" > ЕВРОСОЮЗ</h5>
+          </div>
+          <a class="hex-boxlink" href="http://www.gabarits-assistent.com/"></a>
+        </div>
+      </div>
+
+      <div class="hex-col offset1">
+        <div class="hex offset1">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <!-- hexagon -->
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+            <image mask="url(#maskHex)" class='svg-image animated flash' width="100%" height="100%"xlink:href="image/france_fluttering_flag_256.png" />
+          </svg>
+          <div class="hex-content">
+            <h5 class="animated fadeInDownBig">ФРАНЦИЯ</h5>
+          </div>
+          <a class="hex-boxlink" href="http://www.gabarits-assistent.com/"></a>
+        </div>
+      </div>
+
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+            <image mask="url(#maskHex)" class='svg-image' width="100%" height="100%"xlink:href="image/poland_fluttering_flag_256.png" />
+          </svg>
+          <div class="hex-content">
+            <h5 class="animated bounceInLeft">ПОЛЬША</h5>
+          </div>
+          <a class="hex-boxlink" href=""></a>
+        </div>
+      </div>
+
+      <h2>Lorum Ipsum Deloras </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie</p>
+      <a href="#" class="btn btn-default">View Our Work</a>
+      <a href="#" class="btn btn-warning">Learn About Us</a>
+
+    </div>
+  </div>
+  <!-- end #lab_overlay -->
+
+            <video class="slider-video" width="100%" preload="auto" loop="" autoplay="" style="visibility: visible; width: 100%;" poster="Test/lab-coding-screenshot.jpg">
+
+      <source type="video/mp4" src="Test/lab-coding.mp4">
+        <source src="Test/lab-coding.mp4" type="video/mp4">
+          <source src="Test/lab-coding.webm" type="video/webm">
+            <source src="Test/lab-coding.ogg" type="video/ogg">
+            </video>
+
+          </div>
+
+          <div id="slide_three" class="swiper-slide">
+             <!-- VIDEO -->
+            <video class="slider-video" width="100%" preload="auto" loop="" autoplay="" style="visibility: visible; width: 100%;" poster="//dl.dropbox.com/s/5aeyg9ntj1fs8v1/typing-numbers.jpg">
+              <source src="//dl.dropbox.com/s/xmosdvoleruexky/typing-numbers.mp4" type="video/mp4">
+                <source src="//dl.dropbox.com/s/13z1t97pcvka88k/typing-numbers.webm" type="video/webm">
+                  <source src="//dl.dropbox.com/s/5pyuc35wnv5khe1/typing-numbers.ogv" type="video/ogg">
+            </video>
+            <!-- END VIDEO -->
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <!-- Swiper JS -->
+      <script src="js/swiper.min.js"></script>
+
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false
+        });
+      </script>
+    </div> <!-- end .row -->
+  </div> <!-- end .container-->
+  </div> <!-- end #section -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+<!--=== <End> Блок слайдера -->
+<!--
+-->
+
+<div class="container-fluid">
+  <div class="hex-grid hex-grid-xs-2 hex-grid-sm-5 hex-grid-md-7">
+    <div class="hex-row">
+
+     <div class="hex-col">
+         <div class="hex">
+             <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+              <mask id="maskHex">
+                <!-- hexagon -->
+                <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+              </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+            <image mask="url(#maskHex)" class='svg-image animated flash' width="100%" height="40%"  xlink:href="image/belarus_fluttering_flag_128.png" transform="translate(0, 0)" />
+          </svg>
+          <div class="hex-content">
+            <h5 class="wow bounceInRight"> БЕЛАРУСЬ</h5>
+          </div>
+          <a class="hex-boxlink" href="http://www.assistent-system.by/"></a>
+        </div>
+      </div>
+
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <!-- hexagon -->
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+            <image mask="url(#maskHex)" class='svg-image animated flash' width="100%" height="100%"xlink:href="image/european_union_fluttering_flag_256.png" />
+          </svg>
+          <div class="hex-content" padding-left = 10%>
+            <h5 class="animated fadeInUpBig" > ЕВРОСОЮЗ</h5>
+          </div>
+          <a class="hex-boxlink" href="http://www.gabarits-assistent.com/"></a>
+        </div>
+      </div>
+
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <!-- hexagon -->
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+            <image mask="url(#maskHex)" class='svg-image animated flash' width="100%" height="100%"xlink:href="image/france_fluttering_flag_256.png" />
+          </svg>
+          <div class="hex-content">
+            <h5 class="animated fadeInDownBig">ФРАНЦИЯ</h5>
+          </div>
+          <a class="hex-boxlink" href="http://www.gabarits-assistent.com/"></a>
+        </div>
+      </div>
+
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+            <image mask="url(#maskHex)" class='svg-image' width="100%" height="100%"xlink:href="image/poland_fluttering_flag_256.png" />
+          </svg>
+          <div class="hex-content">
+            <h5 class="animated bounceInLeft">ПОЛЬША</h5>
+          </div>
+          <a class="hex-boxlink" href=""></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+            <image mask="url(#maskHex)" class='svg-image' width="100%" height="100%"xlink:href="image/russia_fluttering_flag_256.png" />
+          </svg>
+          <div class="hex-content">
+            <h5>РОССИЯ</h5>
+          </div>
+          <a class="hex-boxlink" href="http://www.assistent-system.ru/"></a>
+        </div>
+      </div>
+
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+            <image mask="url(#maskHex)" class='svg-image' width="100%" height="100%"xlink:href="image/ukraine_fluttering_flag_256.png" />
+          </svg>
+          <div class="hex-content">
+            <h5>УКРАИНА</h5>
+          </div>
+          <a class="hex-boxlink" href="http://assistent.net.ua/"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 7
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 8
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 9
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 10
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 11
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 12
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 13
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 14
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 15
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 16
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 17
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 18
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 19
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 20
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 21
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 22
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 23
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 24
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 25
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 26
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 27
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 28
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 29
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 30
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 31
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+
+      <div class="hex-col">
+        <div class="hex">
+          <svg class=hex-inner width="350" height="310" viewBox="0 0 350 310" preserveAspectRatio="xMidYMin meet">
+            <defs>
+                <mask id="maskHex">
+                    <polygon class="hex" style="stroke-linejoin: round; fill:white; stroke:white; stroke-width:50;" points="325,155 250,285 100,285 25,155 100,25 250,25"></polygon>
+                </mask>
+            </defs>
+            <rect mask="url(#maskHex)" width="100%" height="100%" class="hex-bg" />
+          </svg>
+          <div class="hex-content">
+            hex 32
+          </div>
+          <a class="hex-boxlink" href="https://www.netcetera.com/20years"></a>
+        </div>
+      </div>
+
+
+
+  </div>
+</div>
+</div>
+
+<div class="theend">some more content</div>
+
+
+  </body>
+</html>
