@@ -2867,13 +2867,13 @@ Formatting the hexagons -> idependent of grid
   height: 100%;
 }
 .hex .hex-bg {
-  fill: #101f42;
-  font: #fff;
+  fill: rgba(16, 31, 66, 0.8);
+/*  font: #fff;*/
 }
 
 .hex:hover .hex-bg {
 /*  fill: #B6FF00;*/
-  fill: rgba(16, 31, 66, 0.8)
+  fill: rgb(16, 31, 66)
 }
 
 .svg-image {
