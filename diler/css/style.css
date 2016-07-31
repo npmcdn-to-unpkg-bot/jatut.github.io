@@ -8,11 +8,19 @@ Bootstrap Stuff to make this pen work
   box-sizing: border-box;
 }
 body {
-  background-color: #2d56d2;
+  background-color: #d3d3d3;
 /*
   background: -webkit-repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
   background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
 */
+}
+
+.assistent {
+  background-color: #d3d3d3;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-top: 10px
 }
 
 .container {
@@ -2857,7 +2865,7 @@ Formatting the hexagons -> idependent of grid
   height: 100%;
 }
 .hex .hex-bg {
-  fill: #2dd280;
+  fill: #778899;
 }
 
 .hex:hover .hex-bg {
