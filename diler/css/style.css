@@ -2872,7 +2872,8 @@ Formatting the hexagons -> idependent of grid
 }
 
 .hex:hover .hex-bg {
-  fill: #B6FF00;
+/*  fill: #B6FF00;*/
+  fill: rgba(16, 31, 66, 0.8)
 }
 
 .svg-image {
