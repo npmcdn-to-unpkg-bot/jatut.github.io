@@ -154,6 +154,7 @@ background-color: rgba(252, 20, 0, 0.8);
 -o-transform: rotate(360deg);
 transform: rotate(360deg);
 }
-.popup p, .popup div {
-margin-bottom: 10px;
+.popup p,
+.popup div {
+  margin-bottom: 10px;
 }
