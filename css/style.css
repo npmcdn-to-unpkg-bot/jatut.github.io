@@ -43,7 +43,7 @@ video#bgvid{
   background:  #ffffff00;
   color:       white;
   /*padding:   2rem;*/
-  width:       35%;
+  width:       50%;
   margin:	   2rem;
   float: 	   right;
   font-size:   1.2rem;
@@ -281,7 +281,6 @@ nav li a:hover {
   transition: 0.5s;
 }
 
-
 .model-7 li {
   margin: 0 10px;
 }
@@ -407,12 +406,28 @@ slid ul {
 */
 
 slid ul {
-  position:absolute;
+/*  position:abso*/
+  text-align: left;
+  text-align-last: left;
+  position: relative;
+  width: -30%;
+  padding:- 100%;
+  left: 150%; /*prevents possible click when not oppened*/
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+  margin-right: -50%;
+/*  padding-top: 20%;*/
+/*  padding-right: 5%;*/
   font-size: 0.5em;
-  color: black;
-  width:100%;
-  padding: 0;
-  left: 10%;; /*prevents possible click when not oppened*/
+  color: #ff0000;
+/*  width:60%;*/
+/*  padding: 0;*/
+  left: auto;
+  right: auto;
+  /*prevents possible click when not oppened*/
   -webkit-transition: all ease .5s;
   -moz-transition: all ease .5s;
   -ms-transition: all ease .5s;
@@ -425,7 +440,56 @@ slid ul {
 }
 */
 slid li {
-  list-style:none;
-  text-align: center;
-  text-transform: uppercase;
+/*
+  right: -10%;
+  left: -10%;
+*/
+/*
+  margin: auto;
+  padding:inherit;
+*/
+/*  list-style:none;*/
+  text-align: left;
+/*  text-transform: uppercase;*/
+}
+
+.slider-text {
+   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight: 100;
+  background:  rgba(255,255,255, 0);
+/*    #ffffff00;*/
+  color:       #64c323;
+  /*padding:   2rem;*/
+  width:       50%;
+  margin:	   2rem;
+  float: 	   right;
+  font-size:   1.2rem;
+
+/*
+  overflow: 				hidden;
+  position: 				fixed;
+  top: 						0;
+  font-family: 				'Montserrat', serif;
+  z-index: 					998;
+  width: 					100%;
+  left: 					100%;
+  margin-left: 				-100px;
+  height: 					200%;
+  background: 				rgba(100,200,240,0.5);
+  -webkit-transition: 		all ease .5s;
+  -moz-transition: 			all ease .5s;
+  -ms-transition: 			all ease .5s;
+  -o-transition: 			all ease .5s;
+  transition: 				all ease .5s;
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: 	top left;
+  -ms-transform-origin: 	top left;
+  -o-transform-origin: 		top left;
+  transform-origin: 		top left;
+  -webkit-transform: 		rotate(-45deg);
+  -moz-transform: 			rotate(-45deg);
+  -ms-transform: 			rotate(-45deg);
+  -o-transform: 			rotate(-45deg);
+  transform: 				rotate(-45deg);
+*/
 }
