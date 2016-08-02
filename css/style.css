@@ -395,3 +395,37 @@ footer {
       width: 70%;
       margin: auto;
 }
+
+/*.menu-outer > nav ul { top:15%; }*/
+.slid-text > slid ul { top:15%; }
+
+/*
+slid ul {
+  font-size: 0.5em;
+  color: black;
+}
+*/
+
+slid ul {
+  position:absolute;
+  font-size: 0.5em;
+  color: black;
+  width:100%;
+  padding: 0;
+  left: 10%;; /*prevents possible click when not oppened*/
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+/*
+.menu-outer:hover > nav ul {
+  left: 0;
+}
+*/
+slid li {
+  list-style:none;
+  text-align: center;
+  text-transform: uppercase;
+}
