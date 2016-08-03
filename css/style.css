@@ -248,7 +248,7 @@ nav li a:hover {
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-}
+}http://www.translate.ru/
 /*****************************************************************************/
 /******************************* footer ******************************/
 /*****************************************************************************/
@@ -286,7 +286,7 @@ nav li a:hover {
 }
 .model-7 a {
   background: none;
-  -moz-box-shadow: 0 0 4px 3px;
+  -moz-box-shadow: 0 0 4px 3px;http://www.translate.ru/http://www.translate.ru/
   -webkit-box-shadow: 0 0 4px 3px;
   box-shadow: 0 0 4px 3px;
   text-shadow: 0 0 1px #333;
@@ -395,7 +395,7 @@ footer {
       margin: auto;
 }
 
-/*.menu-outer > nav ul { top:15%; }*/
+
 .slid-text > slid ul { top: 15%; }
 
 /*
@@ -408,10 +408,10 @@ slid ul {
 slid ul {
 /*  position:abso*/
   text-align: left;
-  text-align-last: left;
-  position: relative;
-  width: -30%;
-  padding:- 100%;
+/*  text-align-last: left;*/
+/*  position: relative;*/
+  width: -50%;
+  padding: -100%;
   left: 150%; /*prevents possible click when not oppened*/
   -webkit-transition: all ease .5s;
   -moz-transition: all ease .5s;
@@ -421,7 +421,7 @@ slid ul {
   margin-right: -50%;
 /*  padding-top: 20%;*/
 /*  padding-right: 5%;*/
-  font-size: 0.5em;
+  font-size: 0.8em;
   color: #ff0000;
 /*  width:60%;*/
 /*  padding: 0;*/
@@ -460,38 +460,10 @@ slid li {
 /*    #ffffff00;*/
   color:       #64c323;
   /*padding:   2rem;*/
-  width:       50%;
+  width:       30%;
   margin:	   2rem;
   float: 	   right;
-  font-size:   1.2rem;
-
-/*
-  overflow: 				hidden;
-  position: 				fixed;
-  top: 						0;
-  font-family: 				'Montserrat', serif;
-  z-index: 					998;
-  width: 					100%;
-  left: 					100%;
-  margin-left: 				-100px;
-  height: 					200%;
-  background: 				rgba(100,200,240,0.5);
-  -webkit-transition: 		all ease .5s;
-  -moz-transition: 			all ease .5s;
-  -ms-transition: 			all ease .5s;
-  -o-transition: 			all ease .5s;
-  transition: 				all ease .5s;
-  -webkit-transform-origin: top left;
-  -moz-transform-origin: 	top left;
-  -ms-transform-origin: 	top left;
-  -o-transform-origin: 		top left;
-  transform-origin: 		top left;
-  -webkit-transform: 		rotate(-45deg);
-  -moz-transform: 			rotate(-45deg);
-  -ms-transform: 			rotate(-45deg);
-  -o-transform: 			rotate(-45deg);
-  transform: 				rotate(-45deg);
-*/
+  font-size:   1rem;
 }
 
 img {
