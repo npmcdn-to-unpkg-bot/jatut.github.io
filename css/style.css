@@ -40,6 +40,7 @@ video#bgvid{
   transition: 1s opacity;
 }
 
+video{ display:block;}
 #polina {
   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
   font-weight: 100;
@@ -65,7 +66,7 @@ h1 {
 }
 
 @media screen and (max-device-width: 800px) {
-  html { background: url("//demosthenes.info/assets/images/polina.jpg") #000 no-repeat center center fixed; 
+  html { background: url("http://demosthenes.info/assets/images/polina.jpg") #000 no-repeat center center fixed;
   }
   #bgvid { 
     display: none; 
