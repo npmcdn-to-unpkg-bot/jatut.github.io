@@ -464,19 +464,11 @@ slid li {
 /*  text-transform: uppercase;*/
 }
 
-.slider-text {
-   font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
-  font-weight: 100;
-  background:  rgba(255,255,255, 0);
-/*    #ffffff00;*/
-  color:       #64c323;
-  /*padding:   2rem;*/
-/*  width:       30%;*/
-  margin:	   2rem;
-  float: 	   right;
-  font-size:   1rem;
-}
 
-img {
-  width: 100%;
-}
+/*img {*/
+/*  width: auto;*/
+/*  margin-left= -12px; */
+/*  width= 462px; */
+/*  height: 100px;*/
+/**  height=100px;*/
+/*}*/
