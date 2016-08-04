@@ -24,11 +24,26 @@
 </head>
 
 <body>
-    <video autoplay webkit-playsinline poster="image/system_white.png" controls id="bgvid" loop>
+    <video autoplay webkit-playsinline='true' poster="image/system_white.png" controls id="bgvid" loop>
         <source src="video/Assistent.3gp" type="video/3gp">
         <source src="video/Assistent.mp4" type="video/mp4">
         <source src="video/Assistent.webm" type="video/webm">
     </video>
+	<script>
+	if(!/iPhone/i.test(navigator.userAgent)) {
+    $('.active > div > video').get(0).play();
+
+    $('#carousel').bind('slide.bs.carousel', function(e) {
+      $(e.relatedTarget).find('video').get(0).play();
+    });
+
+    $('#carousel').bind('slid.bs.carousel', function(e) {
+      $('video').not('.active > div > video').each(function() {
+        $(this).get(0).pause();
+      });
+    });
+  }
+	</script>
     <div id="content">
         <div id="polina">
             <div class="menu-outer">
