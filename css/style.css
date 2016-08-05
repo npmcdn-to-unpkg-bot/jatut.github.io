@@ -23,7 +23,7 @@ video {
 /*  background-size:    cover;*/
   top:                50%;
   left:               50%;
-  -webkit-transform: 	translateX(-50%) translateY(-50%);
+  -webkit-transform: 	translateX(-50%); translateY(-50%);
   transform: 			translateX(-50%) translateY(-50%);
   background:         url(image/system_white.png) no-repeat;
   -webkit-transition: 1s opacity;

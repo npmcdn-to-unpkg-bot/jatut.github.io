@@ -26,7 +26,7 @@
 //});
 
 $(function() {
-    var BV = new $.BigVideo();
+    var BV = new $.BigVideo({useFlashForFirefox:false});
     BV.init();
     BV.show('video/Assistent.mp4',{ambient:true});
 });
