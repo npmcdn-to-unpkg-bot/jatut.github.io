@@ -63,7 +63,3 @@ function carousel() {
     setTimeout(carousel, 2000);
 }
 
-var video =  document.getElementById(element);
-video.addEventListener('click',function(){
-	  video.play();
-},false);
