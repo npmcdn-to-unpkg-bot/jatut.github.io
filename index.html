@@ -1,195 +1,162 @@
-<!DOCTYPE html>
-  <!--[if lt IE 9]>
-<script>
-	document.createElement('video');
-</script>
-<![endif]-->
-   <head>
-    <meta charset="UTF-8">
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-    <meta name="viewport" content="width=device-width">
-    <title>Система мебельных щаблонов Assistent</title>
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet prefetch" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/slider.css">
-<!--    BsVideo -->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Language" content="ru">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<meta name="description" content="Официальный сайт Дельфина">
+		<meta name="keywords" content="дельфин, dolphin, скачать, тексты, дельфина, mp3, музыка, музыку, звезда, рок, альтернатива, альтернативный, юность, новый альбом дельфина">
+		<meta name="developer" content="Sergey Armodin. mak@arm1.ru">
 
-   <link href="//vjs.zencdn.net/5.10.7/video-js.min.css" rel="stylesheet">
-   <script src="//vjs.zencdn.net/5.10.7/video.min.js"></script>
+		<title>ДЕЛЬФИН | DOLPHIN</title>
 
-    <!-- If you'd like to support IE8 -->
-    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<!--    <script src="js/bigvideo.js"></script>-->
-    <style>
-        .mySlides {
-            display: none;
-        }
-    </style>
-</head>
-
-<body>
-<!--
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="//vjs.zencdn.net/5.10.7/video.min.js"></script>
--->
-    <!-- If you'd like to support IE8 -->
-<!--
-    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-    <script src="bigvideo/bigvideo.js"></script>
-    <link rel="stylesheet" href="bigvideo/bigvideo.css">
--->
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/favicon.png">
 
 
-<!--<script src="js/bigvideo.js"></script>-->
-<!--
-		 <script>
-			 $(function() {
-			 var BV = new $.BigVideo  ();
-           BV.init  ();
-           if  (Modernizr.touch) {
-           BV.show  ('image/system_white.png'); } else {
-           BV.show  ('video/Assistent.mp4',{ambient:true});
-           }
-			 })
-		 </script>
--->
-    <video autoplay webkit-playsinline="true" poster="image/system_white.png" controls id="bgvid" loop>
-        <source src="video/Assistent.3gp" type="video/3gp">
-        <source src="video/Assistent.mp4" type="video/mp4">
-        <source src="video/Assistent.webm" type="video/webm">
-    </video>
-    <script src="js/videoplay.js"></script>
-<!--     <script src="http://vjs.zencdn.net/5.10.7/video.js"></script>-->
-<!--
-	<script>
-	if(!/iPhone/i.test(navigator.userAgent)) {
-    $('video').get(0).play();
 
-    $('#carousel').bind('slide.bs.carousel', function(e) {
-      $(e.relatedTarget).find('video').get(0).play();
-    });
+		<style>
+			.is_overlay{ display: block; width: 100%; height: 100%; }
 
-    $('#carousel').bind('slid.bs.carousel', function(e) {
-      $('video').not('.active > div > video').each(function() {
-        $(this).get(0).pause();
-      });
-    });
-  }
-	</script>
--->
-    <div id="content">
-        <div id="polina">
-            <div class="menu-outer">
-                <div class="menu-icon">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="http://www.assistent-system.ru/komponenty-sistemy/">Компоненты</a></li>
-                        <li><a href="http://www.assistent-system.ru/osnastka/">Оснастка</a></li>
-                        <li><a href="diler">Дилеры</a></li>
-                        <li><a href="#">Форум</a></li>
-                        <li><a href="http://www.assistent-system.ru/video/">Видео уроки</a></li>
-                        <li><a href="#">Документация</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <a class="menu-close" onclick="return true">
-                <div class="menu-icon">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </a>
-            <br>
-            <!--  SLIDER    -->
-            <div class="w3-content" style="max-width:500px">
-                <div class="w3-center w3-container">
-                    <!--        w3-xlarge">-->
-<!--                    <img src="image/as-titlesb_black.png" alt="Assystent System" style="margin-left: -12px; width: 462px; height: 100px;">-->
-                    <img src="image/as-titlesb_black.png" alt="Assystent System" width="100%">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div>
-                <!--
-       <div class="mySlides w3-container w3-center w3-card-1">
-          <p></p>
-          <font color=#000 >
-            <i><b>Быстрое и качественное изготовление корпусной мебели с минимальными вложениями в оборудование</b></i>
-          </font>
-        </div>
--->
-                <div class="mySlides w3-container w3-xlarge w3-card-1" style="display: none;">
+			#preloader {
+				margin: auto;
+				left: 0; top: 0; right: 0; bottom: 0;
+				position: absolute;
+				width: 4em;
+				height: 4em;
+				text-align: center;
+				vertical-align: middle;
+				transition: opacity .3s;
+				-webkit-transition: opacity .3s;
+				-moz-transition: opacity .3s;
+				-ms-transition: opacity .3s;
+				-o-transition: opacity .3s;
+				background-color: black;
+				border: 1px solid black;
+				border-radius: 10px;
+				padding: 5px;
+			}
 
-                    <div class="slid-text">
-                        <p></p>
-                        <slid>
-                            <ul>
-                                <li> Поддержка международного мебельного стандарта — System 32</li>
-                                <li> Совместимость с мебельной фурнитурой ведущих фирм (Blum, Hettich и т.п.)</li>
-                            </ul>
-                        </slid>
-                    </div>
-                </div>
-                <div class="mySlides w3-container w3-xlarge w3-card-2" style="display: none;">
-                    <p></p>
-                    <!--            <font color=#000 size=0.5em>-->
-                    <div class="slid-text">
-                        <p></p>
-                        <slid>
-                            <ul>
-                                <li> Дилерская сеть и постпродажная поддержка в СНГ и странах Евросоюза</li>
-                                <li> Множество мастер-классов на YouTube и сообщество пользователей</li>
-                            </ul>
-                        </slid>
-                    </div>
-                    <!--    </font>-->
-                </div>
-
-                <div class="mySlides w3-container w3-xlarge w3-card-2" style="display: block;">
-                    <!--            <font color=#000 size=0.5em>-->
-                    <div class="slid-text">
-                        <p></p>
-                        <slid>
-                            <ul>
-                                <li> Обширная номенклатура компонентов, гибкая комплектация</li>
-                                <li> Окупаемость после первого же изделия!</li>
-                            </ul>
-                        </slid>
-                    </div>
-                    <!--    </font>-->
-                </div>
-            </div>
-
-            <script src="js/slider.js"></script>
-        </div>
-    </div>
+			#wait {
+				-webkit-animation: spin 1.2s infinite linear;
+				-moz-animation: spin 1.2s infinite linear;
+				-ms-animation: spin 1.2s infinite linear;
+				-o-animation: spin 1.2s infinite linear;
+				animation: spin 1.2s infinite linear;
+				font-size: 4em;
+				color: white;
+			}
 
 
-    <footer>
-        <ul class="social-nav model-7">
-            <li><a href="https://twitter.com/vineethtrv" class="twitter"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://www.facebook.com/vini.thekingal" class="facebook"> <i class="fa fa-facebook"></i></a></li>
-            <li><a href="https://plus.google.com/u/0/109987289949504261649/posts" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-            <li><a class="vk"><i class="fa fa-vk"></i></a></li>
-            <li><a class="odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
-        </ul>
-        <!--      <br/>-->
-    </footer>
+			body {
+				background-color: black;
+			}
+
+			#trailer {
+				position: fixed;
+				top: 0; right: 0; bottom: 0; left: 0;
+				overflow: hidden;
+			}
+			#trailer > video {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			/* 1. No object-fit support: */
+			@media (min-aspect-ratio: 16/9) {
+				#trailer > video { height: 300%; top: -100%; }
+			}
+			@media (max-aspect-ratio: 16/9) {
+				#trailer > video { width: 300%; left: -100%; }
+			}
+			/* 2. If supporting object-fit, overriding (1): */
+			@supports (object-fit: cover) {
+				#trailer > video {
+					top: 0; left: 0;
+					width: 100%; height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			#enter {
+				position: fixed;
+				z-index: 100;
+				right: 3em;
+				bottom: 3em;
+				opacity: 0;
+				transition: opacity 9.3s;
+				-webkit-transition: opacity 9.3s;
+				-moz-transition: opacity 9.3s;
+				-ms-transition: opacity 9.3s;
+				-o-transition: opacity 9.3s;
+			}
+
+		</style>
+
+		<script src="detect.min.js"></script>
+
+		<script type="text/javascript">
+			var Preloader = function (element) {
+				var video =  document.getElementById(element),
+					preloader = document.getElementById('preloader'),
+					enter = document.getElementById('enter');
+
+				var ua = detect.parse(navigator.userAgent);
+				if ( ua.os.family === 'Android' ) {
+					video.setAttribute( 'controls','controls' );
+				}
 
 
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/index.js"></script>
+				var api = {};
+
+				api._removePreloader = function() {
+					preloader.style.opacity = 0;
+					enter.style.opacity = 1;
+				};
+
+				api.startCheckingLoading = function() {
+					video.addEventListener('click',function(){
+					  video.play();
+					},false);
+
+					video.addEventListener( 'play', api._removePreloader() );
+				};
+
+				return api;
+			}
+
+			window.addEventListener('load', function() {
+				var preloader = Preloader('video');
+				preloader.startCheckingLoading();
 
 
-</body>
+
+			});
+
+
+		</script>
+	</head>
+
+	<body>
+		<div id="enter">
+			<a href="/news"><img src="enter.png" width="200" height="83" alt="Войти на сайт"></a>
+		</div>
+		<div id="trailer" class="is_overlay">
+			<video id="video" width="100%" height="auto"  autoplay="autoplay" loop="loop" preload="auto" >
+				<source src="book.mp4">
+				<source src="book.webm" type="video/webm">
+			</video>
+		</div>
+
+		<div id="preloader">
+			<i id="wait" class="fa fa-spinner"></i>
+		</div>
+	</body>
+</html>
