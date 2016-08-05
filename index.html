@@ -16,6 +16,19 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet prefetch" href="css/animate.min.css">
     <link rel="stylesheet" href="css/slider.css">
+<!--    BsVideo -->
+    <link href="http://vjs.zencdn.net/5.10.7/video-js.css" rel="stylesheet">
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<!--    <script src="js/bigvideo.js"></script>-->
+		 <script>
+		 $  (function  () {
+ var BV = new $.BigVideo  ();
+ BV.init  ();
+ BV.show  ('video/Assistent.mp4',{ambient:true});
+});
+		 </script>
     <style>
         .mySlides {
             display: none;
@@ -24,11 +37,19 @@
 </head>
 
 <body>
-    <video autoplay webkit-playsinline='true' poster="image/system_white.png" controls id="bgvid" loop>
+    <video autoplay webkit-playsinline="true" poster="image/system_white.png" controls id="bgvid" loop>
+<!--
+ <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+  poster="MY_VIDEO_POSTER.jpg" data-setup="{}"
+-->
+<!--
         <source src="video/Assistent.3gp" type="video/3gp">
         <source src="video/Assistent.mp4" type="video/mp4">
         <source src="video/Assistent.webm" type="video/webm">
     </video>
+-->
+<!--     <script src="http://vjs.zencdn.net/5.10.7/video.js"></script>-->
+<!--
 	<script>
 	if(!/iPhone/i.test(navigator.userAgent)) {
     $('video').get(0).play();
@@ -44,6 +65,7 @@
     });
   }
 	</script>
+-->
     <div id="content">
         <div id="polina">
             <div class="menu-outer">
