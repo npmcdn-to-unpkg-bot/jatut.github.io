@@ -62,3 +62,8 @@ function carousel() {
     x[slideIndex-1].style.display = "block";
     setTimeout(carousel, 2000);
 }
+
+var video =  document.getElementById(element);
+video.addEventListener('click',function(){
+	  video.play();
+},false);
